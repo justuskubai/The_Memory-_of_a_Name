@@ -22,7 +22,7 @@
 <link rel="preload" as="image" href="assets/the-memory-of-a-name.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Book","@id":"https://justuskubai.github.io/The_Memory-_of_a_Name/#book","name":"The Memory of a Name","alternativeHeadline":"The Relationships We Build, the Hearts We Refresh, and the Legacy We Leave","author":{"@id":"https://justuskubai.github.io/The_Memory-_of_a_Name/#author"},"image":"https://justuskubai.github.io/The_Memory-_of_a_Name/assets/the-memory-of-a-name.jpg","inLanguage":"en","description":"Drawing from biblical wisdom and practical life lessons, this book explores how our choices shape the memories people carry of us long after we have left their presence.","offers":{"@type":"Offer","price":"850","priceCurrency":"KES","url":"https://selar.com/l2h1552155","availability":"https://schema.org/InStock"}},
+{"@type":"Book","@id":"https://justuskubai.github.io/The_Memory-_of_a_Name/#book","name":"The Memory of a Name","alternativeHeadline":"The Relationships We Build, the Hearts We Refresh, and the Legacy We Leave","author":{"@id":"https://justuskubai.github.io/The_Memory-_of_a_Name/#author"},"image":"https://justuskubai.github.io/The_Memory-_of_a_Name/assets/the-memory-of-a-name.jpg","inLanguage":"en","isbn":"9798162186946","numberOfPages":112,"datePublished":"2026-10-13","bookFormat":"https://schema.org/Paperback","contributor":{"@type":"Person","name":"Sylivia Suhr","roleName":"Foreword"},"description":"Drawing from biblical wisdom and practical life lessons, this book explores how our choices shape the memories people carry of us long after we have left their presence.","offers":[{"@type":"Offer","name":"E-book","price":"850","priceCurrency":"KES","url":"https://selar.com/l2h1552155","availability":"https://schema.org/InStock"},{"@type":"Offer","name":"Paperback","price":"7.76","priceCurrency":"USD","url":"https://www.amazon.com/dp/B0HN5XGR2R","availability":"https://schema.org/InStock","seller":{"@type":"Organization","name":"Amazon.com"}}]},
 {"@type":"Person","@id":"https://justuskubai.github.io/The_Memory-_of_a_Name/#author","name":"Justus Kubai","honorificPrefix":"Pastor","jobTitle":"Founder & Lead Pastor","worksFor":{"@type":"Church","name":"Deliverance Church Kabete N Market","url":"https://dckabeten.org/"},"telephone":"+254723403263","sameAs":["https://dckabeten.org/our-pastors/"]}
 ]}
 </script>
@@ -86,7 +86,11 @@ header.nav{position:sticky;top:0;z-index:30;background:rgba(227,231,236,.86);bac
 .hero .author-line b{display:block;color:var(--ink);font-weight:600}
 .cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
 .hero .note{margin-top:1.1rem;font-size:.85rem;color:var(--muted)}
-.hero .note a{color:var(--wine);font-weight:600;text-underline-offset:3px}
+.hero .note{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .75rem;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(0,0,0,.06);font-size:.8rem;color:var(--ink);text-decoration:none}
+a.chip:hover{background:#fff}
+.chip .dot,.pick .dot{display:inline-block;width:8px;height:8px;border-radius:50%}
+.dot.wa{background:#1f9d55}.dot.se{background:var(--wine)}.dot.am{background:#ff9900}
 .book{width:718px;max-width:100%;justify-self:end;align-self:end;
  -webkit-mask-image:radial-gradient(ellipse 70% 74% at 50% 48%,#000 55%,transparent 98%);
  mask-image:radial-gradient(ellipse 70% 74% at 50% 48%,#000 55%,transparent 98%)}
@@ -114,6 +118,13 @@ header.nav{position:sticky;top:0;z-index:30;background:rgba(227,231,236,.86);bac
 .prose p:first-child{font-size:1.25rem;line-height:1.6;color:var(--ink)}
 .prose p:first-child:first-letter{font-family:var(--display);float:left;font-size:4.6rem;line-height:.78;padding:.4rem .6rem 0 0;color:var(--wine);font-weight:700}
 .prose .close{font-family:var(--display);font-size:1.6rem;line-height:1.3;color:var(--wine);font-style:italic;margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:2rem;border:1px solid var(--line);border-radius:6px;background:#fff;overflow:hidden}
+.specs div{padding:1rem 1.2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.specs div:nth-child(3n){border-right:0}
+.specs div:nth-last-child(-n+3){border-bottom:0}
+.specs dt{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.specs dd{font-family:var(--display);font-size:1.2rem;color:var(--ink);font-weight:600;line-height:1.3}
+@media (max-width:560px){.specs{grid-template-columns:repeat(2,minmax(0,1fr))}.specs div,.specs div:nth-child(3n){border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.specs div:nth-child(2n){border-right:0}.specs div:nth-last-child(-n+2){border-bottom:0}}
 /* themes */
 .themes{background:#fff;border-block:1px solid var(--line);padding:7rem 0}
 .themes header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem}
@@ -153,23 +164,46 @@ header.nav{position:sticky;top:0;z-index:30;background:rgba(227,231,236,.86);bac
 .links a:hover{border-color:var(--wine)}
 /* order */
 .order{background:linear-gradient(180deg,#e3e7ec,#f1f3f6);padding:7rem 0;border-top:1px solid rgba(0,0,0,.04)}
-.order header{text-align:center;max-width:640px;margin:0 auto 3.5rem}
+.order header{text-align:center;max-width:680px;margin:0 auto 2.2rem}
 .order header .kicker:after{content:"";width:28px;height:1px;background:currentColor}
-.opts{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:1.5rem;max-width:980px;margin:0 auto}
-.opt{background:#fff;border-radius:10px;padding:2.6rem 2.4rem;border:1px solid var(--line);display:flex;flex-direction:column}
-.opt.primary{border:2px solid var(--wa);box-shadow:0 30px 60px -40px rgba(31,157,85,.55);position:relative}
-.opt.primary .tag{position:absolute;top:-13px;left:2.4rem;background:var(--wa);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:.35rem .8rem;border-radius:999px}
-.opt h3{font-size:2rem;color:var(--ink);margin-bottom:.4rem}
-.opt .sub{color:var(--muted);font-size:.95rem;margin-bottom:1.4rem}
-.opt ol,.opt ul{padding-left:0;list-style:none;display:grid;gap:.75rem;margin-bottom:2rem}
-.opt li{display:flex;gap:.8rem;font-size:.97rem;align-items:flex-start}
-.opt li i{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(31,157,85,.1);color:var(--wa-d);font-style:normal;font-size:.75rem;font-weight:600;display:grid;place-items:center;margin-top:.1rem}
-.opt.ebook li i{background:rgba(90,15,25,.07);color:var(--wine)}
-.opt .actions{margin-top:auto;display:grid;gap:.7rem}
-.opt .num{text-align:center;font-size:.88rem;color:var(--muted)}
-.opt .num a{color:var(--ink);font-weight:600;text-decoration:none}
-.price{font-family:var(--display);font-size:2.8rem;color:var(--wine);font-weight:600;line-height:1;margin-bottom:.3rem}
-.price small{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-weight:400}
+.picker{display:none}
+.buy3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem;align-items:stretch}
+.buy{--c:var(--wine);--cl:rgba(90,15,25,.08);position:relative;background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:2.4rem 1.9rem 2rem;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.03);transition:transform .25s,box-shadow .25s;scroll-margin-top:96px}
+.buy:hover{transform:translateY(-4px);box-shadow:0 30px 60px -35px rgba(30,20,20,.35)}
+.buy.wa{--c:#1f9d55;--cl:rgba(31,157,85,.1)}
+.buy.se{--c:#5a0f19;--cl:rgba(90,15,25,.08)}
+.buy.am{--c:#e88a00;--cl:rgba(255,153,0,.13)}
+.ribbon{position:absolute;top:-14px;left:1.9rem;background:var(--c);color:#fff;font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:.38rem .8rem;border-radius:999px}
+.buy.am .ribbon{background:#232f3e}
+.buy-top{display:flex;align-items:center;gap:.9rem;margin-bottom:1.2rem}
+.logo{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--cl);color:var(--c);flex:none}
+.logo .ico{width:24px;height:24px}
+.logo-am{background:#232f3e;color:#ff9900}
+.via{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;line-height:1.2}
+.buy h3{font-size:1.9rem;line-height:1.05;color:var(--ink)}
+.amt{font-family:var(--display);font-size:2.5rem;font-weight:600;line-height:1;color:var(--ink);margin-bottom:.9rem}
+.amt small{font-family:var(--sans);font-size:.8rem;font-weight:400;color:var(--muted);margin-left:.2rem}
+.desc{font-size:.95rem;color:var(--body);margin-bottom:1.2rem}
+.buy ul{list-style:none;display:grid;gap:.6rem;margin-bottom:1.8rem;padding-top:1.2rem;border-top:1px dashed var(--line)}
+.buy li{display:flex;gap:.65rem;font-size:.93rem;align-items:flex-start;line-height:1.5}
+.buy li svg{width:18px;height:18px;flex:none;margin-top:.15rem;color:var(--c)}
+.acts{margin-top:auto;display:grid;gap:.75rem;text-align:center}
+.acts .btn{width:100%}
+.btn-se{background:var(--wine);color:#fff}.btn-se:hover{background:var(--wine-l)}
+.btn-am{background:#ffd814;color:#0f1111;border:1px solid #fcd200}.btn-am:hover{background:#f7ca00}
+.acts .link{font-size:.9rem;font-weight:600;color:var(--wa-d);text-decoration:none;min-height:44px;display:flex;align-items:center;justify-content:center}
+.acts .link:hover{text-decoration:underline}
+.fine{font-size:.8rem;color:var(--muted)}
+.fine a{color:var(--ink);font-weight:600}
+.trust{text-align:center;margin-top:2.6rem;font-size:.95rem;color:var(--muted)}
+.trust a{color:var(--wine);font-weight:600;text-underline-offset:3px}
+@media (max-width:1024px){.buy3{grid-template-columns:minmax(0,1fr);max-width:620px;margin:0 auto}
+ .picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;max-width:620px;margin:0 auto 2.4rem}
+ .pick{display:flex;flex-direction:column;align-items:center;gap:.15rem;padding:.8rem .4rem;background:#fff;border:1px solid var(--line);border-radius:10px;text-decoration:none;font-size:.72rem;color:var(--muted);text-align:center;min-height:44px}
+ .pick b{font-size:.92rem;color:var(--ink)}
+ .dot{width:10px;height:10px;border-radius:50%}.dot.wa{background:#1f9d55}.dot.se{background:var(--wine)}.dot.am{background:#ff9900}
+}
+@media (max-width:560px){.buy{padding:2.2rem 1.3rem 1.6rem}.ribbon{left:1.3rem}.amt{font-size:2.2rem}}
 /* faq */
 .faq{padding:7rem 0}
 .faq .wrap{display:grid;grid-template-columns:4fr 8fr;gap:5rem}
@@ -242,7 +276,7 @@ footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
 </head>
 <body>
 
-<div class="topbar">New release: <em>The Memory of a Name</em> by Pastor Justus Kubai. <a href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20a%20copy%20of%20your%20book%20%22The%20Memory%20of%20a%20Name%22." target="_blank" rel="noopener">Order your copy on WhatsApp</a></div>
+<div class="topbar">New release: <em>The Memory of a Name</em> by Pastor Justus Kubai. <a href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20%22The%20Memory%20of%20a%20Name%22.%0A%0AName%3A%20%0ANumber%20of%20copies%3A%20%0AMy%20location%20%28for%20delivery%29%3A%20" target="_blank" rel="noopener">Order your copy on WhatsApp</a></div>
 
 <header class="nav"><div class="wrap">
  <a class="brand" href="#top" aria-label="Justus Kubai, home"><b>Justus Kubai</b><span>Author &middot; Pastor &middot; Counselor</span></a>
@@ -251,7 +285,7 @@ footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
   <li><a href="#author">The Author</a></li>
   <li><a href="#order">How to Order</a></li>
   <li><a href="#faq">FAQ</a></li>
-  <li class="keep"><a class="btn btn-wa" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20a%20copy%20of%20your%20book%20%22The%20Memory%20of%20a%20Name%22." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Order now</a></li>
+  <li class="keep"><a class="btn btn-wa" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20%22The%20Memory%20of%20a%20Name%22.%0A%0AName%3A%20%0ANumber%20of%20copies%3A%20%0AMy%20location%20%28for%20delivery%29%3A%20" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Order now</a></li>
  </ul>
 </div></header>
 
@@ -266,10 +300,10 @@ footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
    <div><b>Pastor Justus Kubai</b>Founder &amp; Lead Pastor, Deliverance Church Kabete N Market</div>
   </div>
   <div class="cta-row">
-   <a class="btn btn-wa" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20a%20copy%20of%20your%20book%20%22The%20Memory%20of%20a%20Name%22." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Order on WhatsApp</a>
-   <a class="btn btn-ghost" href="https://selar.com/l2h1552155" target="_blank" rel="noopener">Buy the e-book &middot; KSh 850</a>
+   <a class="btn btn-wa" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20%22The%20Memory%20of%20a%20Name%22.%0A%0AName%3A%20%0ANumber%20of%20copies%3A%20%0AMy%20location%20%28for%20delivery%29%3A%20" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Order on WhatsApp</a>
+   <a class="btn btn-ghost" href="#order">See all ways to buy</a>
   </div>
-  <p class="note">Order directly from the author on +254 723 403 263, or buy instantly on Selar. Outside Kenya? <a href="https://a.co/d/026SQ18" target="_blank" rel="noopener">Buy on Amazon</a>.</p>
+  <p class="note"><span class="chip"><i class="dot wa"></i>WhatsApp &middot; KSh 850</span><a class="chip" href="https://selar.com/l2h1552155" target="_blank" rel="noopener"><i class="dot se"></i>E-book &middot; KSh 850</a><a class="chip" href="https://www.amazon.com/dp/B0HN5XGR2R" target="_blank" rel="noopener"><i class="dot am"></i>Amazon paperback &middot; US$7.76</a></p>
  </div>
  <figure class="book">
   <img src="assets/the-memory-of-a-name.jpg" width="718" height="762" alt="The Memory of a Name by Justus Kubai: the book standing upright on two copies lying flat" fetchpriority="high">
@@ -277,10 +311,10 @@ footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
 </div></section>
 
 <section class="strip" aria-label="Book highlights"><div class="wrap">
- <div><b>Biblical wisdom</b><span>Rooted in Scripture</span></div>
- <div><b>Practical lessons</b><span>For everyday life</span></div>
+ <div><b>Paperback</b><span>112 pages &middot; 6 &times; 9 in</span></div>
+ <div><b>Foreword</b><span>by Sylivia Suhr</span></div>
  <div><b>Order direct</b><span>WhatsApp the author</span></div>
- <div><b>Worldwide</b><span>Selar e-book &amp; Amazon</span></div>
+ <div><b>Worldwide</b><span>On Amazon &amp; Selar</span></div>
 </div></section>
 
 <section class="question"><div class="wrap rv">
@@ -300,7 +334,16 @@ footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
   <p>Drawing from biblical wisdom and practical life lessons, this book explores how our choices shape the memories people carry of us long after we have left their presence.</p>
   <p>Whether in our families, friendships, churches, workplaces, or communities, we all have an opportunity to make a difference. The question is: what will people remember when our names come up?</p>
   <p>This book will encourage you to value relationships, live with integrity, refresh the hearts of others, and build a legacy that honours God.</p>
-  <p class="close">Your name is being remembered in someone's story. Make that memory count.</p>
+  <p>Through biblical insights, personal experiences and practical life lessons, Justus Kubai explores how ordinary encounters can shape lives, how a simple act of kindness can leave a lasting impression, and how the people who influence us become part of our stories. It is a call to live intentionally, appreciate people while they are still with us, and recognise the power of the words we speak.</p>
+  <p class="close">And perhaps the most important question of all: can somebody thank God for you?</p>
+  <dl class="specs">
+   <div><dt>Format</dt><dd>Paperback &amp; e-book</dd></div>
+   <div><dt>Pages</dt><dd>112</dd></div>
+   <div><dt>Published</dt><dd>13 October 2026</dd></div>
+   <div><dt>Foreword</dt><dd>Sylivia Suhr</dd></div>
+   <div><dt>Language</dt><dd>English</dd></div>
+   <div><dt>ISBN-13</dt><dd>979-8162186946</dd></div>
+  </dl>
  </div>
 </div></section>
 
@@ -357,37 +400,51 @@ footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
 <section class="order" id="order"><div class="wrap">
  <header class="rv">
   <span class="kicker">How to order</span>
-  <h2>Get your copy of <em>The Memory of a Name</em></h2>
-  <p class="lede" style="margin:0 auto">Order directly from the author on WhatsApp, buy the e-book on Selar, or order on Amazon from anywhere in the world.</p>
+  <h2>Three easy ways to get your copy</h2>
+  <p class="lede" style="margin:0 auto">Choose what suits you best: order directly from the author in Kenya, download the e-book now, or have the paperback shipped by Amazon.</p>
  </header>
- <div class="opts">
-  <article class="opt primary rv">
-   <span class="tag">Order direct</span>
-   <h3>Order on WhatsApp</h3>
-   <p class="sub">Message Pastor Justus directly. Ideal for personal copies, gifts, and copies for your church or group.</p>
-   <ol>
-    <li><i>1</i><span>Tap the button below. WhatsApp opens with your order message ready.</span></li>
-    <li><i>2</i><span>Send it, and say how many copies you would like and where you are.</span></li>
-    <li><i>3</i><span>You will get the price, payment details and delivery or collection arrangements in reply.</span></li>
-   </ol>
-   <div class="actions">
-    <a class="btn btn-wa" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20a%20copy%20of%20your%20book%20%22The%20Memory%20of%20a%20Name%22." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Order on WhatsApp</a>
-    <a class="btn btn-ghost" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20ask%20about%20copies%20of%20%22The%20Memory%20of%20a%20Name%22%20for%20our%20church%20or%20group." target="_blank" rel="noopener">Ask about church &amp; group copies</a>
-    <p class="num">Or save the number: <a href="tel:+254723403263">+254 723 403 263</a></p>
+ <div class="picker rv" role="list">
+  <a class="pick" href="#buy-wa" role="listitem"><span class="dot wa"></span>In Kenya<b>WhatsApp</b></a>
+  <a class="pick" href="#buy-selar" role="listitem"><span class="dot se"></span>Read now<b>E-book</b></a>
+  <a class="pick" href="#buy-amz" role="listitem"><span class="dot am"></span>Worldwide<b>Paperback</b></a>
+ </div>
+ <div class="buy3">
+  <article class="buy wa rv" id="buy-wa">
+   <span class="ribbon">Most popular in Kenya</span>
+   <div class="buy-top"><span class="logo logo-wa"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg></span><div><p class="via">Order direct</p><h3>WhatsApp</h3></div></div>
+   <p class="amt">KSh 850 <small>per copy</small></p>
+   <p class="desc">Message Pastor Justus directly. Your order message is ready to send; just fill in your name, copies and location.</p>
+   <ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Personal copies, gifts and group orders</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Payment details confirmed on WhatsApp</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Delivery or collection arranged with you</span></li></ul>
+   <div class="acts">
+    <a class="btn btn-wa" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20%22The%20Memory%20of%20a%20Name%22.%0A%0AName%3A%20%0ANumber%20of%20copies%3A%20%0AMy%20location%20%28for%20delivery%29%3A%20" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Order on WhatsApp</a>
+    <a class="link" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20ask%20about%20copies%20of%20%22The%20Memory%20of%20a%20Name%22%20for%20our%20church%20or%20group.%0A%0AChurch%20/%20group%3A%20%0ANumber%20of%20copies%3A%20%0ALocation%3A%20" target="_blank" rel="noopener">Ordering for a church or group? &rarr;</a>
+    <p class="fine">+254 723 403 263 &middot; <a href="tel:+254723403263">Call</a></p>
    </div>
   </article>
-  <article class="opt ebook rv">
-   <h3>Buy the e-book</h3>
-   <p class="sub">Instant digital copy through Selar's secure checkout.</p>
-   <p class="price">KSh 850 <small>one-time</small></p>
-   <ul>
-    <li><i>&#10003;</i><span>Read on your phone, tablet or computer</span></li>
-    <li><i>&#10003;</i><span>Pay by card and other options offered at checkout</span></li>
-    <li><i>&#10003;</i><span>Outside Kenya? Also available on Amazon</span></li>
-   </ul>
-   <div class="actions"><a class="btn btn-wine" href="https://selar.com/l2h1552155" target="_blank" rel="noopener">Buy on Selar &middot; KSh 850</a><a class="btn btn-ghost" href="https://a.co/d/026SQ18" target="_blank" rel="noopener">Outside Kenya? Buy on Amazon (US$)</a></div>
+  <article class="buy se rv" id="buy-selar">
+   <span class="ribbon">Instant download</span>
+   <div class="buy-top"><span class="logo logo-se"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg></span><div><p class="via">E-book on</p><h3>Selar</h3></div></div>
+   <p class="amt">KSh 850 <small>e-book</small></p>
+   <p class="desc">Buy securely online and start reading in minutes on your phone, tablet or computer.</p>
+   <ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Delivered instantly after payment</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Secure checkout by Selar</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Payment options shown at checkout</span></li></ul>
+   <div class="acts">
+    <a class="btn btn-se" href="https://selar.com/l2h1552155" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg> Buy the e-book</a>
+    <p class="fine">You will be taken to selar.com to pay</p>
+   </div>
+  </article>
+  <article class="buy am rv" id="buy-amz">
+   <span class="ribbon">Ships worldwide</span>
+   <div class="buy-top"><span class="logo logo-am"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 4h2l2.2 10.2a1.5 1.5 0 0 0 1.5 1.2h7.6a1.5 1.5 0 0 0 1.5-1.1L20.5 8H7"/><circle cx="10" cy="19.5" r="1.3" fill="currentColor"/><circle cx="17" cy="19.5" r="1.3" fill="currentColor"/></svg></span><div><p class="via">Paperback on</p><h3>Amazon</h3></div></div>
+   <p class="amt">US$7.76 <small>from, paperback</small></p>
+   <p class="desc">The 112-page paperback, sold and shipped by Amazon. Ideal for readers outside Kenya.</p>
+   <ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>6 &times; 9 in paperback, 112 pages</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Sold and shipped by Amazon.com</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>30-day returns through Amazon</span></li></ul>
+   <div class="acts">
+    <a class="btn btn-am" href="https://www.amazon.com/dp/B0HN5XGR2R" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 4h2l2.2 10.2a1.5 1.5 0 0 0 1.5 1.2h7.6a1.5 1.5 0 0 0 1.5-1.1L20.5 8H7"/><circle cx="10" cy="19.5" r="1.3" fill="currentColor"/><circle cx="17" cy="19.5" r="1.3" fill="currentColor"/></svg> Buy on Amazon</a>
+    <p class="fine">Shipping and taxes shown at Amazon checkout</p>
+   </div>
   </article>
  </div>
+ <p class="trust rv">Questions before you buy? <a href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20%22The%20Memory%20of%20a%20Name%22.%0A%0AName%3A%20%0ANumber%20of%20copies%3A%20%0AMy%20location%20%28for%20delivery%29%3A%20" target="_blank" rel="noopener">Ask on WhatsApp</a> or read the <a href="#faq">FAQ</a>.</p>
 </div></section>
 
 <section class="faq" id="faq"><div class="wrap">
@@ -395,7 +452,7 @@ footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
  <div class="rv">
   <details open><summary>How do I order a copy?</summary><p>Tap any "Order on WhatsApp" button on this page. It opens a chat with Pastor Justus Kubai on +254 723 403 263 with your order message already written. Send it, and you will receive the price, payment and delivery details in reply.</p></details>
   <details><summary>Can I buy it online instead?</summary><p>Yes. The e-book is available on Selar for KSh 850. After payment you can read it on your phone, tablet or computer.</p></details>
-  <details><summary>I am outside Kenya. How can I buy it?</summary><p>You can buy the book on <a href="https://a.co/d/026SQ18" target="_blank" rel="noopener">Amazon</a> and pay in US dollars, or buy the e-book on Selar, which accepts international cards.</p></details>
+  <details><summary>I am outside Kenya. How can I buy it?</summary><p>Order the 112-page paperback on <a href="https://www.amazon.com/dp/B0HN5XGR2R" target="_blank" rel="noopener">Amazon</a> (from US$7.76, shipped by Amazon), or buy the e-book on Selar, which accepts international cards.</p></details>
   <details><summary>Can our church or group order several copies?</summary><p>Yes. Use the "Ask about church &amp; group copies" button and say how many copies you need. The book works well for small groups, ministry teams, marriage and family fellowships, and leadership circles.</p></details>
   <details><summary>Who is this book for?</summary><p>Anyone who wants to live with integrity and leave a good name behind: in families, friendships, churches, workplaces and communities.</p></details>
   <details><summary>Can I invite the author to speak?</summary><p>For speaking, preaching or counselling enquiries, message Pastor Justus on WhatsApp or contact <a href="https://dckabeten.org/our-pastors/" target="_blank" rel="noopener">Deliverance Church Kabete N Market</a>.</p></details>
@@ -406,9 +463,9 @@ footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
  <span class="kicker" style="color:var(--gold-l)">The Memory of a Name</span>
  <p class="q">Your name is being remembered in someone's story. <span>Make that memory count.</span></p>
  <div class="cta-row">
-  <a class="btn btn-wa" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20a%20copy%20of%20your%20book%20%22The%20Memory%20of%20a%20Name%22." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Order on WhatsApp</a>
+  <a class="btn btn-wa" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20%22The%20Memory%20of%20a%20Name%22.%0A%0AName%3A%20%0ANumber%20of%20copies%3A%20%0AMy%20location%20%28for%20delivery%29%3A%20" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Order on WhatsApp</a>
   <a class="btn btn-outline-l" href="https://selar.com/l2h1552155" target="_blank" rel="noopener">Buy the e-book on Selar</a>
-  <a class="btn btn-outline-l" href="https://a.co/d/026SQ18" target="_blank" rel="noopener">Buy on Amazon</a>
+  <a class="btn btn-outline-l" href="https://www.amazon.com/dp/B0HN5XGR2R" target="_blank" rel="noopener">Paperback on Amazon</a>
  </div>
 </div></section>
 </main>
@@ -418,7 +475,7 @@ footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
  <nav><a href="tel:+254723403263">+254 723 403 263</a><a href="https://dckabeten.org" target="_blank" rel="noopener">dckabeten.org</a></nav>
 </div></footer>
 
-<a class="fab off" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20a%20copy%20of%20your%20book%20%22The%20Memory%20of%20a%20Name%22." target="_blank" rel="noopener" aria-label="Order on WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg></a>
+<a class="fab off" href="https://wa.me/254723403263?text=Hello%20Pastor%20Justus%2C%20I%20would%20like%20to%20order%20%22The%20Memory%20of%20a%20Name%22.%0A%0AName%3A%20%0ANumber%20of%20copies%3A%20%0AMy%20location%20%28for%20delivery%29%3A%20" target="_blank" rel="noopener" aria-label="Order on WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg></a>
 
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
